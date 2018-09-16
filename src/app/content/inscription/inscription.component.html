@@ -1,0 +1,100 @@
+<div class="container">
+  <div class="title mb-4 mt-3 pt-2 pb-2"><h3><span class="badge badge-primary">Inscription</span></h3></div>
+  <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputNom">Nom *</label>
+          <input type="text" class="form-control" id="inputNom" placeholder="Entrez votre nom" formControlName="nom">
+          <div class="errorInput" *ngIf="!nom.valid && (nom.touched)">
+            <div *ngIf="nom.errors.required">Le nom est requis</div>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPrenom">Prénom *</label>
+          <input type="text" class="form-control" id="inputPrenom" placeholder="Entrez votre prénom" formControlName="prenom">
+          <div class="errorInput" *ngIf="!prenom.valid && (prenom.touched)">
+              <div *ngIf="prenom.errors.required">Le prénom est requis</div>
+                </div>
+        </div>
+      </div>
+      <div class="form-row">
+      <div class="form-group col-md-7">
+        <label for="inputEmail">Email *</label>
+        <input type="email" class="form-control" id="inputEmail" placeholder="azerty@abc.com" formControlName="email">
+        <div class="errorInput" *ngIf="!email.valid && (email.touched)">
+            <div *ngIf="email.errors.required">L'email est requis</div>
+            <div *ngIf="email.errors.email">L'email n'est pas conforme</div>
+              </div>
+      </div>
+      
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-5">
+          <label for="inputPseudo">Pseudo *</label>
+          <input type="text" class="form-control" id="inputPseudo" placeholder="Entrez votre pseudo CourseHub" formControlName="pseudo">
+          <div class="errorInput" *ngIf="!pseudo.valid && (pseudo.touched)">
+              <div *ngIf="pseudo.errors.required">Le pseudo est requis</div>
+              <div *ngIf="pseudo.errors.minlength">Pseudo non conforme (4 caractères minimum)</div>
+                </div>
+        </div>
+      </div>
+      <div class="form-row">
+          <div class="form-group col-md-9">
+            <label for="inputSituation">Situation *</label>
+            <input type="text" class="form-control" id="inputSituation" placeholder="Professionnel / Etudiant : précisez votre domaine" formControlName="situation">
+            <div class="errorInput" *ngIf="!situation.valid && (situation.touched)">
+            <div *ngIf="situation.errors.required">La situation est requise</div>
+            <div *ngIf="situation.errors.minlength">Situation non conforme (4 caractères minimum)</div>
+              </div>
+          </div>
+        </div>
+      <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputMdp">Mot de passe *</label>
+            <input type="password" class="form-control" id="inputMdp" placeholder="Entrez votre mot de passe" formControlName="password">
+            <div class="errorInput" *ngIf="!password.valid && (password.touched)">
+                <div *ngIf="password.errors.required">Un mot de passe est requis</div>
+                <div *ngIf="password.errors.minlength">Mot de passe non conforme (6 caractères minimum)</div>
+                <div *ngIf="password.errors.pattern">Doit comporter 1 lettre et 1 chiffre minimum</div>
+                  </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPrenom">Confirmation *</label>
+            <input type="password" class="form-control" id="inputMdpCheck" placeholder="Confirmez votre mot de passe" formControlName="password2">
+            <div class="errorInput" *ngIf="!password2.valid && (password2.touched)">
+                <div *ngIf="password2.errors.required">Confirmation requise</div>
+                <div *ngIf="!password2.valid">Le mot de passe ne correspond pas</div>
+                  </div>
+          </div>
+        </div>
+      <div class="form-row">
+        <div class="form-group col-md-5">
+          <label for="inputVille">Ville *</label>
+          <input type="text" class="form-control" id="inputVille" placeholder="Entrez votre ville" formControlName="ville">
+          <div class="errorInput" *ngIf="!ville.valid && (ville.touched)">
+          <div *ngIf="ville.errors.required">La ville est requise</div>
+          </div>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="inputZip">Code Postal *</label>
+            <input type="text" class="form-control" id="inputZip" placeholder="00000" formControlName="zip">
+            <div class="errorInput" *ngIf="!zip.valid && (zip.touched)">
+                <div *ngIf="zip.errors.required">Le code postal est requis</div>
+                <div *ngIf="zip.errors.pattern">Code postal non conforme</div>
+                </div>
+          </div>
+        <div class="form-group col-md-4">
+          <label for="inputPays">Pays *</label>
+          <input type="text" class="form-control" id="inputPays" placeholder="Entrez votre pays" formControlName="pays">
+          <div class="errorInput" *ngIf="!pays.valid && (pays.touched)">
+              <div *ngIf="pays.errors.required">Le pays est requis</div>
+              </div>
+        </div>
+      </div>
+      <button type="submit" [disabled]="!signinForm.valid" class="btn btn-outline-primary mt-4">Valider</button>
+      <div class="link">
+          <a id="connexion" class="form-text text-muted nouveau mt-3" routerLink="/login">Déjà inscrit ? Connectez-vous</a>
+        </div>
+    </form>
+</div>
+    

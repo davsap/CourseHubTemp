@@ -1,0 +1,50 @@
+<div class="container" *ngIf="formation!=undefined">
+  <div class="row">
+    <div class="col-sm-3"> <img class="card-img-top spe pl-5 imageform" src="{{formation.image}}" alt="Card image cap"></div>
+    <div class="col-sm-9"><h1>{{formation.titre}}</h1></div>
+  </div>
+  <!-- <div *ngIf="showEdit"> -->
+      <div class="row">
+          <div class="col-sm-12"> <br> </div>
+        </div>
+ <!--  <div >
+    <button class="btn btn-outline-success btn-small" (click)="showSujetForm">Ajouter un  module de Cours</button>
+  </div> -->
+  <div class="row">
+        <div class="col-sm-12">&nbsp;</div>
+      </div>
+  <div class="row pb-5">
+    <div class="col-sm-12 pl-5 pr-5">
+        <div class="card border-primary text-primary col-sm-12 mb-4 p-3"><h5>
+        {{formation.description}}</h5></div>
+  </div>
+<!--   <div class="row">
+    <div class="col-sm-12"><app-sujet-list></app-sujet-list></div>
+  </div>  -->
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">&nbsp;</div>
+    <div class="col-sm-8">
+      <accordion  class="panel panel-info">
+          <accordion-group *ngFor="let sujet of formation.sujets" heading="{{sujet.titre}}" [panelClass]="customClass">
+              <div>
+                  <!-- <h2 style="float:left">{{sujet.titre}}</h2> -->
+                  <ol>
+                      <li *ngFor="let cours of sujet.courses"><a class="nav-link" routerLink="/formation/{{formation.id}}/sujet/{{sujet.id}}/cours/{{cours.id}}">{{cours.titre}}</a></li>
+                  </ol>
+                    
+              </div>
+           <!-- TODO :   ajouter async, id de sujet comme parametre
+              <app-cours-list  [sujetID]="sujet.id"></app-cours-list> -->
+            </accordion-group>
+      </accordion>
+    </div>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="col-sm-12 mt-4"><app-evaluation></app-evaluation></div>
+  </div>

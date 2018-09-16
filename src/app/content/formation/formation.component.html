@@ -1,0 +1,15 @@
+<div class="container01" *ngIf="show">
+  <a routerLink='/formationform' routerLinkActive="router-link-active" class="btn btn-outline-primary">
+    <i class="fas fa-plus"></i> Créer une nouvelle formation</a>
+</div>
+<div class="container01" *ngIf="!show">
+  <a routerLink='/signin' class="btn btn-outline-danger">
+    <i class="fas fa-plus"></i> Créer une nouvelle formation</a>
+</div>
+
+<app-formation-list></app-formation-list>
+<!-- <div class="clothes-list row justify-content-center p-3">
+    <app-formation-list *ngFor="let formation of formations"  
+    class="col-12 col-sm-6 col-md-4 col-lg-3 p-3" 
+    [formation]='formation'></app-formation-list>
+  </div> -->

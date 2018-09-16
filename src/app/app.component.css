@@ -1,0 +1,88 @@
+
+
+#page {
+    width: 100%;
+    height: 100%;
+}
+
+html,body {
+    width:100%;
+    height:100%;
+}
+
+#sidebar {
+    display: block;
+    width: 0%;
+    float:left;
+    background: rgba(0,0,0,0.1);
+    height:100vh;
+    overflow: hidden;
+}
+
+#sidebar.expanded {
+    width: 15%;
+}
+
+#sidebar.expanded + #sidebar-toggle i {
+    transform: rotate(0);
+}
+
+#sidebar + 
+
+#sidebar-toggle {
+    float:left;
+    padding-top: 1em;
+    padding-left: .5em;
+    width: 2%;
+}
+
+#sidebar-toggle i {
+    cursor: pointer;
+}
+
+#sidebar.expanded ~ #content {
+    width: 85%;
+}
+
+#sidebar.expanded ~ #content #sidebar-toggle i {
+    transform-origin: center;
+    transform: rotate(180deg);
+}
+
+#content {
+    width: 100%;
+    float:left;
+}
+
+#sidebar, #content {
+    transition: width .5s;
+}
+
+
+header, #main, footer {
+    width: 100%;
+}
+
+header,footer {
+    height: 10vh;
+}
+
+#main {
+    height:80vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+footer {
+    background: rgba(0,0,0,0.5);
+
+}
+
+
+
+.ng-sidebar-container{
+    height: 100vh;
+}
+      
+  
+

@@ -1,0 +1,19 @@
+.container {
+    /* background-color: brown;  */
+    /* margin-top: 15vh; */
+    width: 90%;
+}
+
+img{
+  width: auto;
+  object-fit: cover;
+  height: 50vh;
+}
+.badge {
+    margin-bottom: 10%;
+}
+@media (min-width: 1280px) { 
+    .badge {
+       font-size: 150%;
+    }
+}

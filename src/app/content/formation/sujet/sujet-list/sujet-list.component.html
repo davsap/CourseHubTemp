@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">&nbsp;</div>
+    <div class="col-sm-8">
+      <accordion  class="panel panel-info" >
+          <accordion-group *ngFor="let sujet of formation.sujets" heading="{{sujet.titre}}" [panelClass]="customClass">
+            <!-- TODO :   ajouter async, id de sujet comme parametre -->
+              <app-cours-list  [sujetID]="sujet.id"></app-cours-list>
+            </accordion-group>
+      </accordion>
+    </div>
+  </div>
+</div>

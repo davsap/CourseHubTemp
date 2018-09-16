@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 ">&nbsp;</div>
+    <div class="col-sm-4 "><span class="badge badge-warning "> <h5>Modifiez votre formation</h5> </span></div>
+    <div class="col-sm-4 "> &nbsp; </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <h5>{{formation.titre}}</h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <button class="badge badge-success ml-5" (click)="addSujet()">
+       Créer un nouveau module
+      </button>
+      
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-sm-1">
+     &nbsp;     
+    </div>
+
+  </div>
+
+  <div class="container ">
+    <div class="row" *ngFor="let sujet of formation.sujets ">
+        <div class= "col-sm-12 sujets" >
+            <a (click)="addSujet()"><img src="./../../../../assets/images/admin/add.png" title="Ajouter un cours"></a>
+             <span class="sujetTitre"> {{sujet.titre}}</span>
+      </div>
+      
+      <div class="container">
+        <div class="row " *ngFor="let cours of sujet.courses">
+
+          <div class="col-sm-1">
+            &nbsp;
+          </div>
+          <div class="col-sm-11 cours">
+        
+            <a (click)="editCours()"><img src="./../../../../assets/images/admin/edit.png" title="Modifier le cours"></a>
+              &nbsp;
+            <a (click)="removeCours()"><img src="./../../../../assets/images/admin/remove.png" title="Supprimer le cours"></a>
+            &nbsp;
+            {{cours.titre}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <!-- <div class="container flex-column">
+  <h4 class="mb-5">Modifiez votre formation</h4>
+  <div class="col-sm-12">
+    <h5>{{formation.titre}}</h5>
+  </div>
+  <h5>
+    <span class="badge badge-warning ml-5">Modifier la formation</span>
+    <span class="badge badge-success ml-5" (click)="addSujet">Créer un nouveau module</span></h5>
+  <div *ngIf="formation.sujets">
+    <div class="col-sm-12" *ngFor="let sujet of formation.sujets">
+      <div class="m-3 ml-5">
+        <h6>{{sujet.titre}}</h6>
+      </div>
+      <h5 class="ml-5"><span class="badge badge-success ml-5">Créer un nouveau cours</span></h5>
+      <div class="cours" *ngFor="let cours of sujet.courses">
+        <p> {{cours.titre}}<p>
+      </div>
+
+<<<<<<< HEAD
+=======
+<div class="container flex-column">
+  <h4 class="mb-5">Modifiez votre formation</h4> 
+    <div class="col-sm-12"><h5>{{formation.titre}}</h5></div><h5><span class="badge badge-warning ml-5">Modifier la formation</span><a routerLink="/formation/{{formation.id}}/sujetform" routerLinkActive="router-link-active"><span class="badge badge-success ml-5">Créer un nouveau module</span></a></h5>
+          <div class="col-sm-12" *ngFor="let sujet of formation.sujets">
+              <div class="m-3 ml-5"><h6>{{sujet.titre}}</h6></div> <h5 class="ml-5"> <a routerLink="/formation/{{formation.id}}/sujet/{{sujet.id}}/coursform" routerLinkActive="router-link-active"><span class="badge badge-success ml-5">Créer un nouveau cours</span></a></h5>
+                  <div class="cours" *ngFor="let cours of sujet.courses">
+                     <p>- {{cours.titre}}<p></div>
+                   
+>>>>>>> 71188c6edd30387a5a7ce2b18b65720ab507722f
+    </div>
+  </div>
+</div> -->
+
+
+
+
+    <!-- <a class="ml-3 mr-3"> <img  src="./../../../../assets/images/admin/plus.png" title="Ajouter un module" ></a>   -->

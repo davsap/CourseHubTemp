@@ -1,0 +1,11 @@
+
+<div class="container" *ngIf='cours!=undefined'>
+  <div class="col-sm-12 pb-5"><h1>{{cours.titre}}</h1></div>
+  <div class="card border-primary text-primary col-sm-12 mb-5 p-3"><h5>{{cours.description}}</h5></div>
+  <div class="col-sm-12 contenu">{{cours.contenu}}</div>
+  <div class="col-sm-12">
+    <video class="mt-5" width="320" height="240" controls>
+      <source src="{{cours.video}}" type="video/mp4">
+    </video>
+  </div>
+</div>

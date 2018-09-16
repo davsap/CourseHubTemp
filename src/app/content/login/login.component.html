@@ -1,0 +1,36 @@
+<div class="container col-sm-12">
+  <div class="logincard col-sm-12">
+    <div class="card mb-3 mt-2" style="width: 50vh;">
+        <div class="card-body text-dark">
+
+            <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+                {{errorMessage}}}
+             </div>
+          <h3><span class="badge badge-primary mb-4">S'identifier</span></h3>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label for="inputIdentifiant">Identifiant</label>
+                <input type="text" class="form-control" id="inputIdentifiant" placeholder="Pseudo" formControlName="identifiant">
+                <div class="errorInput" *ngIf="!identifiant.valid && (identifiant.touched)">
+                <div *ngIf="identifiant.errors.required">L'identifiant est requis</div>
+              </div>
+              </div>
+  
+              
+              <div class="form-group mt-4">
+                <label for="inputPassword">Mot de passe</label>
+                <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe" formControlName="password">
+                <div class="errorInput" *ngIf="!password.valid && (password.touched)">
+                  <div *ngIf="password.errors.required">Le mot de passe est requis</div>
+                </div>
+              </div>
+              <div class="container1">
+              <button type="submit" [disabled]="!loginForm.valid" class="btn btn-outline-primary mt-4 align-items-center">Valider</button>
+              <a id="creation" class="form-text text-muted nouveau mt-3" routerLink="/signin">Nouveau sur le site ? <br>Créer un compte</a>
+            </div>
+            </form>
+        </div>
+      </div>
+      </div>
+  </div>
+    

@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light bg-faded">
+    <a class="navbar-brand" href="#"><i class="fas fa-user-graduate mr-2 ml-2"></i>CourseHub</a>
+    <button class="toggleSideBar" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link pr-3" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pr-3 mr-3" routerLink="/formation">Formations</a>
+        </li>
+          <div *ngIf="show"><a class="btn btn-outline-success" routerLink="/dashboard/{{user.id}}">Mes formations [{{user.pseudo}}]</a></div>
+      </ul>
+      <ul class="d-flex flex-row my-2 my-lg-0">
+        <li class="nav-item">
+          <a class="btn btn-outline-primary mr-3"  routerLink="/signin">S'inscrire</a>
+        </li>
+        <li class="nav-item">
+          <div *ngIf="show"><a class="btn btn-outline-primary mr-3"  (click)="onClick()" routerLink="/home">Se déconnecter</a></div>
+          <div *ngIf="!show"><a class="btn btn-outline-primary mr-3"  routerLink="/login">Se connecter</a></div>
+        </li>
+      </ul>
+      <!-- <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form> -->
+    </div>
+  </nav>

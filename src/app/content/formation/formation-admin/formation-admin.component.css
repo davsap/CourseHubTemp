@@ -1,0 +1,17 @@
+.cours {
+ /* margin-left: 10%;*/
+ background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+}
+.sujets{
+background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+margin-top: 5px;
+}
+.sujetTitre{
+    font-size: larger;
+    font-weight: 300; 
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

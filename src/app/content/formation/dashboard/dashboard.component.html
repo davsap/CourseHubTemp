@@ -1,0 +1,30 @@
+<div class="tout">
+
+<h4 class="mb-4">Mes créations</h4>
+  <div class="container01">
+  <a routerLink='/formationform' routerLinkActive="router-link-active" class="btn btn-outline-primary">
+    <i class="fas fa-plus"></i> Créer une nouvelle formation</a>
+</div>
+
+<div class="card-deck row justify-content-center p-3">
+    <div class="container" *ngFor="let formation of formations"  
+       class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-3">
+        <div class="card border text-dark">
+      <img class="card-img-top spe" src="{{formation.image}}" alt="Card image cap">
+      <div class="card-body">
+        <a class="nav-link" routerLink="/formationadmin/{{formation.id}}">{{formation.titre}}</a>
+        
+        <!-- <p>{{formation.description}}</p> -->
+      </div>
+  
+      <div>
+        <p class="maj">Dernière mise à jour : {{formation.date}}</p>
+      </div>
+      
+      <app-evaluation class="rating"></app-evaluation>
+  <!--     <div class="card-footer">
+        <a class="btn btn-info text-white">Voir la formation</a>
+      </div> -->
+    </div>
+  </div>
+</div>

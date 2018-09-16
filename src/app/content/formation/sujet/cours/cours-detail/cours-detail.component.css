@@ -1,0 +1,11 @@
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+.card, .contenu {
+    text-align: justify;
+}
+h1 {
+    text-align: center;
+}

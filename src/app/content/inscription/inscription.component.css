@@ -1,0 +1,64 @@
+/* .test {
+background-color: brown;
+font-size: 200%;
+} */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vh;
+}
+.logincard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vh;
+}
+.title {
+    text-align: center;
+    font-size: 150%;
+}
+.btn {
+    justify-content: center;
+    width: 20%;
+    margin-left: 40%;
+}
+.container1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+.ng-valid:not(form)  {
+    border-left: 5px solid rgb(102, 200, 206); /* green */
+  }
+.ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+.ng-untouched:not(form):not(form) {
+    border-left: 5px solid #cfd9df;
+}
+.errorInput {
+    color: red;
+    font-size: 90%;
+}
+.nom {
+    display: flex;
+    flex-direction: row;
+}
+.champs {
+    display: flex;
+    flex-direction: column;
+}
+.contenu {
+    display: flex;
+    justify-content: left;
+}
+.link {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
